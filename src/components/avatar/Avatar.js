@@ -5,10 +5,10 @@ import './avatar.scss'
 
 function Avatar({src}) {
   return (
-    <div className='Avatar'>
+    <span className='Avatar'>
         <img src={src? src: userPic} alt="" />
       
-    </div>
+    </span>
   )
 }
 

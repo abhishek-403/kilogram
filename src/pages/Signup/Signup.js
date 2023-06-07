@@ -3,6 +3,8 @@ import './signup.scss'
 import { useRef } from 'react';
 import { axiosClient } from '../../utils/axiosClient';
 import { KEY_ACCESS_TOKEN, setItem } from '../../localStorageManager';
+import { setSpinner } from '../../redux/slices/appConfigSlice';
+import { useDispatch } from 'react-redux';
 
 
 function Signup() {
@@ -10,10 +12,13 @@ function Signup() {
     const name = useRef('');
     const password = useRef('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     async function handleSubmit(e) {
         e.preventDefault();
         try {
+            
+            dispatch(setSpinner(false))
 
             const result = await axiosClient.post('/auth/signup', {
                 name: name.current.value,
@@ -29,6 +34,9 @@ function Signup() {
         } catch (error) {
             console.log(error);
 
+        }finally{
+            
+            dispatch(setSpinner(false))
         }
     }
 

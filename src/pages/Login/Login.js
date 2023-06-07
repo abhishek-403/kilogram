@@ -3,6 +3,8 @@ import './Login.scss'
 import { axiosClient } from '../../utils/axiosClient';
 import { useState } from 'react';
 import { KEY_ACCESS_TOKEN, setItem } from '../../localStorageManager';
+import { useDispatch } from 'react-redux';
+import { setSpinner } from '../../redux/slices/appConfigSlice';
 
 
 
@@ -13,11 +15,13 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     async function handleSubmit(e) {
         e.preventDefault();
 
         try {
+            dispatch(setSpinner(true))
             const response = await axiosClient.post('/auth/login', {
                 email: email,
                 password: password
@@ -30,6 +34,9 @@ function Login() {
         } catch (error) {
             return Promise.reject(error)
 
+        }finally{
+            
+            dispatch(setSpinner(false))
         }
     }
     return (

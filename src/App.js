@@ -12,6 +12,7 @@ import { useEffect, useRef } from "react";
 
 import NotLoggedIn from "./components/NotLoggedIn";
 import toast, { Toaster } from 'react-hot-toast';
+import Loading from "./components/Loading/Loading";
 
 
 
@@ -25,10 +26,11 @@ export const TOAST_FAILURE = 'toast_failure'
 
 function App() {
   const isloading = useSelector(state => state.appConfigReducer.isLoading)
+
   const toastData = useSelector(state => state.appConfigReducer.toastData)
 
   const loadingRef = useRef(null);
-  
+
   useEffect(() => {
     if (isloading) {
       loadingRef.current?.continuousStart();
@@ -56,7 +58,10 @@ function App() {
     }
 
   }, [toastData])
- 
+
+
+  const isSpinning = useSelector(s => s.appConfigReducer.isSpinning)
+
 
 
   return (
@@ -64,6 +69,11 @@ function App() {
 
       <LoadingBar height={4} color="red" ref={loadingRef} />
       <div><Toaster /></div>
+
+
+      {isSpinning && <Loading />}
+
+
 
       <Routes>
 

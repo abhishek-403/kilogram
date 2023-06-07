@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './bottomnav.scss'
 import { AiFillHome } from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
@@ -11,29 +11,35 @@ import { setCreatingPost, setSearching } from '../../redux/slices/appConfigSlice
 function BottomNav() {
   const myProfile = useSelector(state => state.appConfigReducer.myProfile);
   const creatingPost = useSelector(state => state.appConfigReducer.creatingPost);
-  const isSearching = useSelector(state => state.appConfigReducer.isSearching);
+  // const isSearching = useSelector(state => state.appConfigReducer.isSearching);
   const dispatch = useDispatch()
 
-  const navigate = useNavigate()
 
 
   return (
+
     <div id='bottomNav' >
       <div className="content flex">
-        <div id="home" onClick={() => { dispatch(setSearching(false), navigate('/')) }}>
+        <NavLink
+       
+          onClick={() => { dispatch(setSearching(false)) }} to={'/'}        
+          
+          >
           <AiFillHome />
-        </div>
+        </NavLink>
 
-        <div id="search" onClick={() => { dispatch(setSearching(!isSearching), navigate('/')) }}>
+        <NavLink onClick={() => { dispatch(setSearching(true)) }} to={'/'}>
           <FiSearch />
-        </div>
-        <div id="add" onClick={() => { dispatch(setCreatingPost(!creatingPost), navigate(`/profile/${myProfile._id}`)) }}>
-          <IoIosAddCircleOutline />
-        </div>
+        </NavLink>
 
-        <div id="myProfile" onClick={() => { dispatch(setCreatingPost(false), navigate(`/profile/${myProfile._id}`)) }}>
+        <NavLink onClick={() => { dispatch(setCreatingPost(!creatingPost)) }} to={`/profile/${myProfile?._id}`}>
+          <IoIosAddCircleOutline />
+        </NavLink>
+
+        <NavLink id='myProfile' onClick={() => { dispatch(setCreatingPost(false)) }} to={`/profile/${myProfile?._id}`}>
           <Avatar src={myProfile?.avatar?.url} />
-        </div>
+        </NavLink>
+
 
 
       </div>

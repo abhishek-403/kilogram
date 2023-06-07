@@ -3,9 +3,10 @@ import { axiosClient } from '../../utils/axiosClient';
 
 
 
-export const getMyInfo = createAsyncThunk('/user/getmyinfo', async (_) => {
+export const getMyInfo = createAsyncThunk('/user/getmyinfo', async (_,thunkAPI) => {
     try {
         
+        thunkAPI.dispatch(setSpinner(true));
 
 
         const response = await axiosClient.get('/user/getmyprofile')
@@ -16,7 +17,9 @@ export const getMyInfo = createAsyncThunk('/user/getmyinfo', async (_) => {
     } catch (e) {
         return Promise.reject(e)
 
-    } 
+    } finally{
+        thunkAPI.dispatch(setSpinner(false));
+    }
 })
 
 
@@ -59,13 +62,17 @@ const appConfigSlice = createSlice({
         myFeeds:[],
         toastData:{},
         creatingPost:false,
-        isSearching:false
+        isSearching:false,
+        isSpinning:false
 
 
     },
     reducers: {
         setLoader: (state, action) => {
             state.isLoading = action.payload;
+        },
+        setSpinner: (state, action) => {
+            state.isSpinning = action.payload;
         },
         setCreatingPost: (state, action) => {
             state.creatingPost = action.payload;
@@ -97,4 +104,4 @@ const appConfigSlice = createSlice({
 })
 
 export default appConfigSlice.reducer;
-export const { setSearching,setLoader,showToast,setCreatingPost } = appConfigSlice.actions;
+export const { setSpinner,setSearching,setLoader,showToast,setCreatingPost } = appConfigSlice.actions;
