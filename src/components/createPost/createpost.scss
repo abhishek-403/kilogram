@@ -8,6 +8,8 @@
     justify-content: center;
 
     padding: 20px;
+    min-height: 200px;
+    gap: 15px;
 
     .top-side {
       display: flex;
@@ -57,8 +59,8 @@
 
       .btn-post {
         color: rgb(241, 240, 240);
-        background-color: #11b0f5;
-        border: 1px solid rgb(0, 166, 200);
+        background-color: var(--prim-col);
+        border: 1px solid rgb(200, 127, 0);
         font-size: 20px;
         font-weight: 200;
       }
@@ -78,6 +80,8 @@
     background-color: rgba(0, 0, 0, 0.421);
     .container {
       width: 90vw;
+      min-height: 170px;
+      gap: 15px;
       background: linear-gradient(
         140deg,
         rgb(216, 133, 255),
@@ -86,7 +90,6 @@
       border-radius: 30px;
       padding: 15px 20px;
       box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.625);
-
       .bottom-side {
         margin-top: auto;
         .btn-post {

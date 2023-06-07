@@ -1,11 +1,9 @@
 import React, {  useState } from 'react'
 import './createpost.scss'
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { axiosClient } from '../../utils/axiosClient';
-import { getUserProfile } from '../../redux/slices/postSlice';
 import { BsFillImageFill } from 'react-icons/bs'
 import Avatar from '../avatar/Avatar';
-import { useParams } from 'react-router-dom';
 
 
 
@@ -13,12 +11,9 @@ function CreatePost() {
 
   const user = useSelector(state => state.postReducer.userProfile)
 
-  const params= useParams();
-
   const [img, setImg] = useState('');
   const [caption, setCaption] = useState('');
 
-  const dispatch = useDispatch();
 
 
 
@@ -39,9 +34,9 @@ function CreatePost() {
 
     } finally {
       
-      dispatch(getUserProfile({
-        userId: params.userId
-      }));
+      // dispatch(getUserProfile({
+      //   userId: params.userId
+      // }));
       setCaption('');
       setImg('')
 
@@ -70,7 +65,7 @@ function CreatePost() {
           <Avatar src={user?.avatar?.url} />
 
 
-          <input placeholder='Caption' onChange={(e) => setCaption(e.target.value)} value={caption} type="text" id='caption-input' />
+          <input autoComplete='off' placeholder='Caption' onChange={(e) => setCaption(e.target.value)} value={caption} type="text" id='caption-input' />
 
 
 

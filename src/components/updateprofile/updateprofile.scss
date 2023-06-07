@@ -1,14 +1,12 @@
 .update-profile {
- 
   margin-top: var(--nav-ht);
   height: 100%;
   padding: 5px 0px;
-  
+
   .container {
     height: 100%;
-    
+
     display: flex;
-  
 
     .left-side {
       display: flex;
@@ -46,8 +44,6 @@
       }
     }
 
-
-
     .right-side {
       display: flex;
       flex-direction: column;
@@ -55,25 +51,21 @@
 
       padding: 0px 10px;
 
-
       .btn-delete {
         margin-left: auto;
-        
+
         background-color: rgb(246, 58, 58);
         // margin: 0px auto;
         margin-top: auto;
         width: fit-content;
-        
+
         border: 1px solid black;
         height: 40px;
 
         font-size: 20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: Georgia, "Times New Roman", Times, serif;
         color: white;
-        
-      
       }
-      
 
       form {
         display: flex;
@@ -92,53 +84,50 @@
           font-size: 18px;
           font-family: Georgia, "Times New Roman", Times, serif;
         }
+        .buttons-grp{
+          gap: 10px;
+          .btn-submit,
+          .btn-logout {
+            background-color: rgb(202, 58, 246);
+  
+            width: fit-content;
+            color: white;
+            border: 1px solid black;
+          }
+  
+          .btn-submit:active {
+            background-color: rgb(1, 255, 115);
+          }
 
-        .btn-submit,.btn-logout {
-          background-color: rgb(202, 58, 246);
-         
-          width: fit-content;
-          color: white;
-          border: 1px solid black;
         }
 
-        .btn-submit:active {
-          background-color: rgb(1, 255, 115);
-        }
       }
-
-      
     }
   }
 }
 
-
-@media (max-width : 480px){
-  .update-profile{
-    
-  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
-  radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
-    overflow: scroll;
+@media (max-width: 480px) {
+  .update-profile {
+    background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
+      radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
     height: calc(100vh - (calc((var(--nav-ht) + var(--bottomnav-ht)))));
-    .container{
+    overflow: scroll;
+    .container {
       flex-direction: column;
       gap: 10px;
 
       .left-side {
-       
         .Avatar {
-          
-  
           img {
-            
             height: 120px;
             width: 120px;
-          }}}
+          }
+        }
+      }
 
-
-      .right-side{
-        form{
-
-          label{
+      .right-side {
+        form {
+          label {
             margin: 0px;
           }
         }

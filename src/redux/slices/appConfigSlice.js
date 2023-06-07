@@ -61,8 +61,6 @@ const appConfigSlice = createSlice({
         myPosts:[],
         myFeeds:[],
         toastData:{},
-        creatingPost:false,
-        isSearching:false,
         isSpinning:false
 
 

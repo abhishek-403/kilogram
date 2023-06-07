@@ -13,6 +13,8 @@ import { useEffect, useRef } from "react";
 import NotLoggedIn from "./components/NotLoggedIn";
 import toast, { Toaster } from 'react-hot-toast';
 import Loading from "./components/Loading/Loading";
+import Search from "./components/Search/Search";
+import CreatePost from "./components/createPost/CreatePost";
 
 
 
@@ -84,6 +86,8 @@ function App() {
             <Route path="/" element={<Feed />}  ></Route>
             <Route path="/profile/:userId" element={<Profile />}  ></Route>
             <Route path="/profile/update" element={<Updateprofile />}  ></Route>
+            <Route path="/search" element={<Search />}  ></Route>
+            <Route path="/createpost" element={<CreatePost />}  ></Route>
           </Route>
 
         </Route>

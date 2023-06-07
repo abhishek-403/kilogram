@@ -1,10 +1,9 @@
-import React, { useEffect  } from 'react'
+import React, { useEffect } from 'react'
 import './feed.scss'
 import Post from '../posts/Post'
 import { useDispatch, useSelector } from 'react-redux';
 import { getFeedData } from '../../redux/slices/feedSlice';
 import Followings from '../followings/Followings';
-import Search from '../Search/Search';
 
 
 function Feed() {
@@ -13,7 +12,6 @@ function Feed() {
 
   const feedData = useSelector(state => state.feedReducer.feedData);
 
-  const isSearching = useSelector(state => state.appConfigReducer.isSearching);
   const dispatch = useDispatch();
 
 
@@ -30,7 +28,7 @@ function Feed() {
   return (
     <div className='feed'>
       <div className="container">
-        {!isSearching && <div className="left-part">
+        <div className="left-part">
 
           {
             feedData?.posts?.map((item, i) => {
@@ -46,13 +44,13 @@ function Feed() {
             })
           }
 
-        </div>}
-        {
+        </div>
+        {/* {
           isSearching &&
           <div className="mid">
             <Search />
           </div>
-        }
+        } */}
 
         <div className="right-part">
 

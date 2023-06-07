@@ -4,7 +4,6 @@ import Avatar from '../avatar/Avatar'
 import './profile.scss'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import CreatePost from '../createPost/CreatePost'
 import { getUserProfile } from '../../redux/slices/postSlice'
 import { followController } from '../../redux/slices/feedSlice'
 
@@ -14,8 +13,6 @@ function Profile() {
   const myProfile = useSelector(state => state.appConfigReducer.myProfile);
   const feedData = useSelector(s => s.feedReducer.feedData);
   
-  const creatingPost = useSelector(state=>state.appConfigReducer.creatingPost);
-
   const dispatch = useDispatch();
 
   const params = useParams();
@@ -125,7 +122,6 @@ function Profile() {
 
         <div className="bottom-area">
 
-          {isMe && creatingPost && <CreatePost />}
 
           <div className="post-div">
             {

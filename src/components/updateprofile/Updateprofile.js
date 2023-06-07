@@ -49,6 +49,8 @@ function Updateprofile() {
     dispatch(updateProfile({
       name,bio,dp,userName
     }))
+
+    navigate('/');
     
     
 
@@ -111,20 +113,23 @@ function Updateprofile() {
 
                 <label htmlFor="user-name">User name :</label>
 
-                <input pattern="[a-z 0-9]" value={userName} onChange={(e)=>{setUserName(e.target.value)}} type="text" name="" id="user-name" />
+                <input autoComplete='off' pattern="[a-z 0-9]" value={userName} onChange={(e)=>{setUserName(e.target.value)}} type="text" name="" id="user-name" />
 
 
                 <label htmlFor="name">Name :</label>
 
-                <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text" name="" id="name" />
+                <input autoComplete='off' value={name} onChange={(e)=>{setName(e.target.value)}} type="text" name="" id="name" />
 
                 <label htmlFor="bio">Bio :</label>
 
-                <input value={bio} onChange={(e)=> {setBio(e.target.value)}} type="text" name="" id="bio" />
+                <input autoComplete='off' value={bio} onChange={(e)=> {setBio(e.target.value)}} type="text" name="" id="bio" />
 
+
+                <div className="buttons-grp flex">
 
                 <input className="btn btn-submit" onClick={handleSubmit} type='button' value="Submit" />
                 <input onClick={handlelogout} className='btn btn-logout' type="button" value="Logout" />
+                </div>
                
               </form>
                 
