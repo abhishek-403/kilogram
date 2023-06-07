@@ -1,0 +1,32 @@
+
+.navbar{
+    // max-width: 100%;
+    height:var(--nav-ht);
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.214);
+    .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .right-side{
+            display: flex;
+            
+            height: 100%;
+            .profile{
+                .Avatar{
+                    img{
+                        border-radius: 50px;
+
+                    }
+                }
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: auto 0px;
+            }
+
+        }
+
+    }
+    
+}

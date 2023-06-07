@@ -1,0 +1,32 @@
+.profile-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.174);
+  padding: 0px 10px;
+  margin: 5px 0px ;
+  
+
+  .name-dp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .Avatar {
+      img {
+        border-radius: 50px;
+      }
+    }
+  }
+  .data-block {
+    gap: 5px;
+    #name {
+      font-family: var(--h1-font);
+      font-size: var(--p-font-size);
+    }
+    #username {
+      font-family: var(--p-font);
+      font-size: var(--smaller-font-size);
+    }
+  }
+}

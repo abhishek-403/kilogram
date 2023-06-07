@@ -1,0 +1,75 @@
+i::-webkit-scrollbar {
+  display: none;
+}
+.feed {
+  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
+    radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+
+  .container {
+    display: flex;
+    // padding-top: 20px;
+
+    .left-part {
+      padding-top: 20px;
+      max-height: 100vh;
+      flex: 2;
+      overflow: scroll;
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+      .each-post {
+        height: 100%;
+        .post {
+          height: 580px;
+          .content {
+            height: 60%;
+          }
+        }
+      }
+    }
+
+    .right-part {
+      flex: 1;
+      // margin-top: 20px;
+      padding: 0px 10px;
+
+      .suggestions {
+        margin: 25px 0px;
+      }
+      .followings,
+      .suggestions {
+        padding: 0px 10px;
+
+        #followings-h2,
+        #suggestions-h2 {
+          margin: 0px 0px 15px 0px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .feed {
+    .container {
+      .right-part {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .feed {
+    margin-bottom: var(--bottomnav-ht);
+    .container {
+      .left-part {
+        gap: 0px;
+        .each-post {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

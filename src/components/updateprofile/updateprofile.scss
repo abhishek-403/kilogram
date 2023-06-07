@@ -1,0 +1,134 @@
+.update-profile {
+ 
+  margin: 20px 0px;
+  height: 100%;
+  
+  .container {
+    height: 100%;
+    
+    display: flex;
+  
+
+    .left-side {
+      display: flex;
+
+      flex: 1.5;
+
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+      .Avatar {
+        display: flex;
+        width: auto;
+
+        height: auto;
+
+        img {
+          border-radius: 100px;
+          height: 200px;
+          width: 200px;
+          // margin: auto;
+        }
+      }
+
+      .update-dp {
+        font-size: 18px;
+        background-color: #22bdff;
+      }
+
+      #user-img {
+        display: none;
+      }
+    }
+
+
+
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      flex: 3;
+
+      padding: 0px 10px;
+
+
+      .btn-delete {
+        margin-left: auto;
+        
+        background-color: rgb(246, 58, 58);
+        // margin: 0px auto;
+        margin-top: auto;
+        width: fit-content;
+        
+        border: 1px solid black;
+        height: 40px;
+
+        font-size: 20px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
+        
+      
+      }
+      
+
+      form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        label {
+          margin: 10px 0px;
+        }
+
+        input {
+          height: 40px;
+          width: 90%;
+          margin: 8px 0px;
+          padding: 0px 15px;
+          font-size: 18px;
+          font-family: Georgia, "Times New Roman", Times, serif;
+        }
+
+        .btn-submit {
+          background-color: rgb(202, 58, 246);
+         
+          margin-top: auto;
+          width: fit-content;
+          color: white;
+          border: 1px solid black;
+        }
+
+        .btn-submit:active {
+          background-color: rgb(1, 255, 115);
+        }
+      }
+
+      
+    }
+  }
+}
+
+
+@media (max-width : 480px){
+  .update-profile{
+    margin-top: 10px;
+    margin-bottom: var(--bottomnav-ht);
+    .container{
+      flex-direction: column;
+      gap: 10px;
+
+
+      .right-side{
+        form{
+
+          label{
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+}

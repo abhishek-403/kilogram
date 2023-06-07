@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Domine:wght@500&family=Merriweather&family=Playfair+Display:wght@500&family=Poppins:wght@400;500&family=Roboto+Slab:wght@500&display=swap");
+
+html{
+    -webkit-tap-highlight-color: transparent;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    --bottomnav-ht:55px;
+    --nav-ht:60px;
+    
+    --white-col:white;
+    
+    --border-color:#ddd;
+    --accent-color:#458eff;
+    
+  --h1-font: "Roboto Slab", serif;
+  --h2-font: 'Playfair Display', serif;
+  --h4-font:  'Salsa', cursive;
+  --allh-font: "Merriweather", serif;
+  --p-font: "Domine", sans-serif;
+  --span-font:'Carter One', cursive;
+
+
+
+  
+
+  --prim-col: hsl(41, 100%, 50%);
+
+  --sec-col: hsl(285, 100%, 50%);
+  --danger-col: hsl(8, 100%, 50%);
+  --light-col: hsl(0, 0%, 67%);
+  --lighter-col: hsl(250, 47%, 93%);
+
+
+  --h1-font-size: 2.8rem;
+  --h2-font-size: 2.5rem;
+  --h4-font-size: 2rem;
+  --h6-font-size: 1.5rem;
+  --p-font-size: 1.2rem;
+  --small-font-size: 1.1rem;
+  --smaller-font-size: 0.8rem;
+
+  --btn-font-size: 1.2rem;
+}
+.container{
+    padding: 0px 10px;
+    max-width: 960px;
+    margin: auto;
+}
+
+.hover-link{
+    cursor: pointer;
+}
+.hover-link:active{
+    color: blueviolet;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #212121;
+}
+
+h3,h6{
+    font-weight: 400;
+}
+
+/* Buttons */
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    cursor: pointer;
+  
+    padding: 5px 15px 7px 15px;
+  
+    border-radius: 30px;
+    font-family: var(--h1-font);
+    font-size: var(--btn-font-size);
+    user-select: none;
+  }
+  .btn:hover {
+    opacity: 0.8;
+  }
+  .btn:active {
+    opacity: 0.9;
+  }
+.btn-follow{
+    background-color: rgb(62, 132, 246);
+    color: white;
+
+    
+}
+
+.btn:hover{
+    opacity: .9;
+}
+
+
+.flex{
+    display: flex;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexcol{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,69 @@
+#signup {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
+    radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+    background-size: cover;
+  
+    .content {
+      width: 350px;
+  
+      background-color: var(--lighter-col);
+      border-radius: 20px;
+      box-shadow: 1px 1px 18px 0px rgba(0, 0, 0, 0.214);
+      gap: 20px;
+  
+      padding: 10px 20px;
+      margin: 10px 20px;
+      .top {
+        text-align: center;
+      }
+      .mid {
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        input {
+          height: 50px;
+          font-family: var(--p-font);
+          font-size: var(--p-font-size);
+          padding: 0px 10px;
+          width: 100%;
+          border: 1px solid black;
+  
+          transition:all .2s ease-out;
+          outline: 0;
+  
+          &:focus {
+            border-color:rgb(127, 127, 255);
+          }
+        }
+        div {
+          width: 100%;
+        }
+
+
+        #submit{
+          cursor: pointer;
+          width: 100%;
+          height: 35px;
+          font-family: var(--p-font);
+          font-size: var(--p-font-size);
+          border-radius: 30px;
+          background-color: var(--prim-col);
+          border: none;
+          color: white;
+
+        }
+      }
+      .bottom {
+        font-family: var(--allh-font);
+        font-size: var(--smaller-font-size);
+        a {
+          color: blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
