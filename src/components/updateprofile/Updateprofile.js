@@ -6,6 +6,7 @@ import { updateProfile } from '../../redux/slices/appConfigSlice'
 
 import { axiosClient } from '../../utils/axiosClient';
 import { useNavigate } from 'react-router-dom';
+import { KEY_ACCESS_TOKEN, removeItem } from '../../localStorageManager';
 
 function Updateprofile() {
 
@@ -75,6 +76,17 @@ function Updateprofile() {
     }
     
   }
+  async function handlelogout(){
+    try {
+        await axiosClient.post('/auth/logout');
+
+        removeItem(KEY_ACCESS_TOKEN);
+        navigate('/login');
+    } catch (e) {
+        return Promise.reject(e);
+        
+    }
+}
 
   
   
@@ -99,7 +111,7 @@ function Updateprofile() {
 
                 <label htmlFor="user-name">User name :</label>
 
-                <input pattern="[a-z0-9]" value={userName} onChange={(e)=>{setUserName(e.target.value)}} type="text" name="" id="user-name" />
+                <input pattern="[a-z 0-9]" value={userName} onChange={(e)=>{setUserName(e.target.value)}} type="text" name="" id="user-name" />
 
 
                 <label htmlFor="name">Name :</label>
@@ -112,6 +124,7 @@ function Updateprofile() {
 
 
                 <input className="btn btn-submit" onClick={handleSubmit} type='button' value="Submit" />
+                <input onClick={handlelogout} className='btn btn-logout' type="button" value="Logout" />
                
               </form>
                 

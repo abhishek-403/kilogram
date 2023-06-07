@@ -1,18 +1,26 @@
-
-.navbar{
+#navbar{
     // max-width: 100%;
     height:var(--nav-ht);
+    z-index: 99;
     box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.214);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--white-col);
     .container{
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        h2{
+            font-size: var(--h4-font-size);
+            font-family: var(--h1-font);
+        }
         .right-side{
             display: flex;
             
             height: 100%;
-            .profile{
+            .profile-small{
                 .Avatar{
                     img{
                         border-radius: 50px;

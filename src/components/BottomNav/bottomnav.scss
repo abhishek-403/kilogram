@@ -6,6 +6,7 @@
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.214);
   width: 100%;
   z-index: 99;
+  display: none;
 
   .content {
     height: 100%;
@@ -27,5 +28,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  #bottomNav {
+    display: block;
   }
 }

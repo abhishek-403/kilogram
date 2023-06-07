@@ -1,7 +1,8 @@
 .update-profile {
  
-  margin: 20px 0px;
+  margin-top: var(--nav-ht);
   height: 100%;
+  padding: 5px 0px;
   
   .container {
     height: 100%;
@@ -85,17 +86,16 @@
 
         input {
           height: 40px;
-          width: 90%;
+          width: 100%;
           margin: 8px 0px;
           padding: 0px 15px;
           font-size: 18px;
           font-family: Georgia, "Times New Roman", Times, serif;
         }
 
-        .btn-submit {
+        .btn-submit,.btn-logout {
           background-color: rgb(202, 58, 246);
          
-          margin-top: auto;
           width: fit-content;
           color: white;
           border: 1px solid black;
@@ -114,11 +114,25 @@
 
 @media (max-width : 480px){
   .update-profile{
-    margin-top: 10px;
-    margin-bottom: var(--bottomnav-ht);
+    
+  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
+  radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+    overflow: scroll;
+    height: calc(100vh - (calc((var(--nav-ht) + var(--bottomnav-ht)))));
     .container{
       flex-direction: column;
       gap: 10px;
+
+      .left-side {
+       
+        .Avatar {
+          
+  
+          img {
+            
+            height: 120px;
+            width: 120px;
+          }}}
 
 
       .right-side{

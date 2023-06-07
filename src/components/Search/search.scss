@@ -2,11 +2,10 @@
   position: absolute;
   left: 0;
 
-  height: calc(100vh - (calc(var(--bottomnav-ht) + (var(--nav-ht)))));
+  height: calc(100vh - (calc( (var(--nav-ht) + var(--bottomnav-ht)))));
   width: 100vw;
     
-  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
-radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+display: none;
 
 
     padding: 20px 10px;
@@ -32,8 +31,9 @@ radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
       }
     }
   }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   #search-page {
+    display: block;
       .search {
         text-align: center;
         input {

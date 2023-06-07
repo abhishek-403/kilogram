@@ -1,5 +1,9 @@
 .profile {
-  margin-top: 20px;
+  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
+    radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+
+  margin-top: var(--nav-ht);
+  min-height: calc(100vh - var(--nav-ht));
 
   .container {
     display: flex;
@@ -64,9 +68,7 @@
             align-items: center;
             font-size: 20px;
             gap: 10px;
-            .btn-follow {
-              font-size: 20px;
-            }
+
             .btn-edit {
               background-color: #212121;
               color: #fff;
@@ -145,7 +147,8 @@
 
 @media (max-width: 480px) {
   .profile {
-    margin-top: 0;
+    height: calc(100vh - (calc((var(--nav-ht) + var(--bottomnav-ht)))));
+    overflow: auto;
     .container {
       .top-area {
         height: 150px;

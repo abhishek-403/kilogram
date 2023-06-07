@@ -8,15 +8,19 @@ import { useNavigate } from 'react-router-dom';
 function Followings({ item }) {
 
     const feedData = useSelector(s => s.feedReducer.feedData);
+    const myProfile = useSelector(s => s.appConfigReducer.myProfile);
     const [isFollowing, setIsFollowing] = useState(false);
+    const [isMe, setIsMe] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate()
+    
 
     useEffect(() => {
         setIsFollowing(feedData?.followings?.find(user => user._id === item._id))
+        setIsMe(myProfile._id === item._id)
 
 
-    }, [feedData,item._id])
+    }, [feedData,item._id,myProfile._id])
 
 
     function handleFollow() {
@@ -44,7 +48,8 @@ function Followings({ item }) {
             </div>
             <div onClick={handleFollow} className="btn btn-follow">
                 {
-                    isFollowing ? 'Unfollow' : 'Follow'
+                    isMe === false? (isFollowing ? 'Unfollow' : 'Follow'):'Me'
+                    
                 }
             </div>
         </div>
