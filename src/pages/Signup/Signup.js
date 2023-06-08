@@ -17,16 +17,17 @@ function Signup() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            
+
             dispatch(setSpinner(false))
 
-            const result = await axiosClient.post('/auth/signup', {
+            const response = await axiosClient.post('/auth/signup', {
                 name: name.current.value,
                 email: email.current.value,
                 password: password.current.value
             })
 
-            setItem(KEY_ACCESS_TOKEN, result.accessToken);
+            setItem(KEY_ACCESS_TOKEN, response.result.accessToken);
+            console.log(response.result.accessToken);
             navigate('/profile/update');
             window.location.reload(false);
 
@@ -34,8 +35,8 @@ function Signup() {
         } catch (error) {
             console.log(error);
 
-        }finally{
-            
+        } finally {
+
             dispatch(setSpinner(false))
         }
     }

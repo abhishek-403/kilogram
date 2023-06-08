@@ -14,7 +14,7 @@ function Search() {
 
     }, [dispatch])
     const data = rawData.filter(item => {
-        if (item.name.toLowerCase().includes(search) || item.username.toLowerCase().includes(search))
+        if (search.includes('*') || item?.name?.toLowerCase().includes(search) || item?.username?.toLowerCase().includes(search))
             return item;
 
         else return null;

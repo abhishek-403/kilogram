@@ -76,7 +76,7 @@ axiosClient.interceptors.response.use(
         return Promise.reject(error)
     },async (e)=>{
         store.dispatch(setLoader(false));
-        if(e==="Invalid access key."){
+        if(e.includes("Invalid access key")){
             return;
         }
         store.dispatch(showToast({

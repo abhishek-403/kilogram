@@ -11,7 +11,7 @@ import { KEY_ACCESS_TOKEN, removeItem } from '../../localStorageManager';
 function Updateprofile() {
 
 
-  const myProfile = useSelector(state=>state.appConfigReducer.myProfile);
+  const myProfile = useSelector(state => state.appConfigReducer.myProfile);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -26,119 +26,120 @@ function Updateprofile() {
     setUserName(myProfile?.username || '');
     setBio(myProfile?.bio || '');
     setDp(myProfile?.avatar?.url)
-  
-    
+
+
   }, [myProfile])
-  
-  
-  function handleDpChange(e){
+
+
+  function handleDpChange(e) {
     const file = e.target.files[0];
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
-    fileReader.onload =()=>{
-      if(fileReader.readyState === fileReader.DONE){
+    fileReader.onload = () => {
+      if (fileReader.readyState === fileReader.DONE) {
         setDp(fileReader.result);
       }
     }
-    
+
   }
-  
-  function handleSubmit(e){
+
+  function handleSubmit(e) {
     e.preventDefault();
 
     dispatch(updateProfile({
-      name,bio,dp,userName
+      name, bio, dp, userName
     }))
 
     navigate('/');
-    
-    
+
+
 
   }
 
-  async function handleDelete(){
-    
-    
+  async function handleDelete() {
+
+
     try {
-      const confirm =(prompt("Enter your user id") === myProfile.username);
-      if(confirm === myProfile?.username){
-        
-      await axiosClient.delete('/user/deleteprofile')
-  
+      const confirm = (prompt("Enter your name"));
+      if (confirm === myProfile?.name) {
+
+        await axiosClient.delete('/user/deleteprofile')
+        removeItem(KEY_ACCESS_TOKEN);
+
         // console.log(response);
         navigate('/login');
 
       }
-      
-      
-      
+
+
+
     } catch (e) {
-        return Promise.reject(e);
-        
+      return Promise.reject(e);
+
     }
-    
+
   }
-  async function handlelogout(){
+  async function handlelogout() {
     try {
-        await axiosClient.post('/auth/logout');
+      await axiosClient.post('/auth/logout');
 
-        removeItem(KEY_ACCESS_TOKEN);
-        navigate('/login');
+      removeItem(KEY_ACCESS_TOKEN);
+      navigate('/login');
     } catch (e) {
-        return Promise.reject(e);
-        
-    }
-}
+      return Promise.reject(e);
 
-  
-  
+    }
+  }
+
+
+
 
 
   return (
     <div className='update-profile'>
-        <div className="container">
-            <div className="left-side">
-              <Avatar src={dp}/>
+      <div className="container">
+        <div className="left-side">
+          <Avatar src={dp} />
 
-              <label htmlFor="user-img"><p className="btn update-dp">Update Profile picture</p></label>
-              <input type="file" onChange={handleDpChange} accept='image/*' id="user-img" />
-                
-                 
+          <label htmlFor="user-img"><p className="btn update-dp">Update Profile picture</p></label>
+          <input type="file" onChange={handleDpChange} accept='image/*' id="user-img" />
 
 
-            </div>
-            <div className="right-side">
 
-              <form onSubmit={handleSubmit}>
-
-                <label htmlFor="user-name">User name :</label>
-
-                <input autoComplete='off' pattern="[a-z 0-9]" value={userName} onChange={(e)=>{setUserName(e.target.value)}} type="text" name="" id="user-name" />
-
-
-                <label htmlFor="name">Name :</label>
-
-                <input autoComplete='off' value={name} onChange={(e)=>{setName(e.target.value)}} type="text" name="" id="name" />
-
-                <label htmlFor="bio">Bio :</label>
-
-                <input autoComplete='off' value={bio} onChange={(e)=> {setBio(e.target.value)}} type="text" name="" id="bio" />
-
-
-                <div className="buttons-grp flex">
-
-                <input className="btn btn-submit" onClick={handleSubmit} type='button' value="Submit" />
-                <input onClick={handlelogout} className='btn btn-logout' type="button" value="Logout" />
-                </div>
-               
-              </form>
-                
-              <input type="button" className="btn btn-delete" value="Delete account" onClick={handleDelete} />
-
-            </div>
 
         </div>
-      
+        <div className="right-side">
+
+          <form onSubmit={handleSubmit}>
+
+            <label htmlFor="user-name">User name :</label>
+
+            <input autoComplete='off' pattern="[a-z 0-9]" value={userName} onChange={(e) => { setUserName(e.target.value) }} type="text" name="" id="user-name" />
+
+
+            <label htmlFor="name">Name :</label>
+
+            <input autoComplete='off' value={name} onChange={(e) => { setName(e.target.value) }} type="text" name="" id="name" />
+
+            <label htmlFor="bio">Bio :</label>
+
+            <input autoComplete='off' value={bio} onChange={(e) => { setBio(e.target.value) }} type="text" name="" id="bio" />
+
+
+            <div className="buttons-grp flex">
+
+              <input className="btn btn-submit" onClick={handleSubmit} type='button' value="Submit" />
+              <input onClick={handlelogout} className='btn btn-logout' type="button" value="Logout" />
+            </div>
+
+          </form>
+
+          <input type="button" className="btn btn-delete" value="Delete account" onClick={handleDelete} />
+
+        </div>
+
+      </div>
+
     </div>
   )
 }

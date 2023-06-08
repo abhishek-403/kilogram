@@ -27,7 +27,7 @@ function Loading() {
             } id="box">
                 <img style={
                     {
-                        width: "45px"
+                        height: "45px"
 
                     }
                 } src={spinner} alt="" />
