@@ -50,6 +50,9 @@ function App() {
 
         break;
       case TOAST_FAILURE:
+        if (toastData.message.message === "Invalid access key.") {
+          return;
+        }
         toast.error(toastData.message.message)
 
         break;

@@ -26,6 +26,7 @@ axiosClient.interceptors.response.use(
         store.dispatch(setLoader(false))
 
 
+
         const data = response.data;
         if (data.status === 'ok') {
             return data;
@@ -35,8 +36,9 @@ axiosClient.interceptors.response.use(
         const statusCode = data.statusCode;
         const error = data.message;
 
+
         store.dispatch(showToast({
-            type:TOAST_FAILURE,
+            type: TOAST_FAILURE,
             message: error
         }))
 
@@ -51,15 +53,16 @@ axiosClient.interceptors.response.use(
 
 
 
-
             if (response.data.status === 'ok') {
                 setItem(KEY_ACCESS_TOKEN, response.data.result.accessToken);
-
-
+               
+                
+                
                 originalRequest.headers['Authorization'] = `Bearer ${response.data.result.accessToken}`;
+            
 
-
-
+                
+                window.location.reload()
                 return axios(originalRequest);
 
             }
@@ -74,13 +77,11 @@ axiosClient.interceptors.response.use(
         }
 
         return Promise.reject(error)
-    },async (e)=>{
+    }, async (e) => {
         store.dispatch(setLoader(false));
-        if(e.includes("Invalid access key")){
-            return;
-        }
+        
         store.dispatch(showToast({
-            type:TOAST_FAILURE,
+            type: TOAST_FAILURE,
             message: e
         }))
 
