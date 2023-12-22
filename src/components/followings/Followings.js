@@ -27,7 +27,7 @@ function Followings({ item }) {
   }
 
   return (
-    <div className="profile-card ">
+    <div className="profile-card flex gap-10">
       <div
         className="name-dp hover-link"
         onClick={() => navigate(`/profile/${item?._id}`)}
@@ -41,12 +41,12 @@ function Followings({ item }) {
       <div onClick={handleFollow} className="">
         {isMe === false ? (
           isFollowing ? (
-            <p className="text-white-500 px-3 py-1 bg-blue-500 text-xs rounded-full cursor-pointer">Unfollow</p>
+            <p className="text-white px-3 py-1 bg-blue-500 text-xs rounded-full cursor-pointer">Unfollow</p>
           ) : (
-            <p className="text-white-500 px-3 py-1 bg-blue-500 text-sm rounded-full cursor-pointer">Follow</p>
+            <p className="text-white px-3 py-1 bg-blue-500 text-sm rounded-full cursor-pointer">Follow</p>
           )
         ) : (
-            <p className="text-white-500 px-3 py-1 bg-blue-500 text-7 rounded-full cursor-pointer">Me</p>
+            <p className="text-white px-3 py-1 bg-blue-500 text-7 rounded-full cursor-pointer">Me</p>
         )}
       </div>
     </div>

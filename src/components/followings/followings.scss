@@ -3,11 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  border: 1px solid rgba(0, 0, 0, 0.174);
-  padding: 0px 10px;
-  margin: 5px 0px ;
-  
-
+  border: 1px solid rgba(132, 128, 128, 0.174);
   .name-dp {
     display: flex;
     align-items: center;
@@ -23,10 +19,12 @@
     #name {
       font-family: var(--h1-font);
       font-size: 14px;
+      color: white;
     }
     #username {
       font-family: var(--p-font);
       font-size: 12px;
+      color: white;
     }
   }
 }
