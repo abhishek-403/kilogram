@@ -44,10 +44,10 @@ axiosClient.interceptors.response.use(
 
 
 
-        if (statusCode === 401 && !originalRequest._retry) {
-            originalRequest._retry = true;
-            const response = await axios.create({
-                withCredentials: true
+            if (statusCode === 401 && !originalRequest._retry) {
+                originalRequest._retry = true;
+                const response = await axios.create({
+                    withCredentials: true
 
             }).get(`${process.env.REACT_APP_SERVER_BASE_URL}/auth/refresh`)
 
@@ -58,11 +58,12 @@ axiosClient.interceptors.response.use(
                
                 
                 
+            
                 originalRequest.headers['Authorization'] = `Bearer ${response.data.result.accessToken}`;
             
 
                 
-                window.location.reload()
+                // window.location.reload()
                 return axios(originalRequest);
 
             }

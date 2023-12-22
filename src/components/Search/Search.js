@@ -20,7 +20,7 @@ function Search() {
         else return null;
     })
     return (
-        <div className='flexcol' id='search-page'>
+        <div className="flexcol bg-black" id='search-page'>
             <div className="search">
 
 

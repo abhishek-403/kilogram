@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Carter+One&family=Domine:wght@500&family=Merriweather&family=Playfair+Display:wght@500&family=Poppins:wght@400;500&family=Roboto+Slab:wght@500&display=swap");
 
 html{
@@ -18,8 +21,9 @@ html{
     --nav-ht:60px;
     
     --white-col:white;
+    --black-col:black;
     
-    --border-color:#ddd;
+    --border-color:#4d4b4b;
     --accent-color:#458eff;
     
   --h1-font: "Roboto Slab", serif;
@@ -54,7 +58,7 @@ html{
 }
 .container{
     padding: 0px 10px;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
 }
 

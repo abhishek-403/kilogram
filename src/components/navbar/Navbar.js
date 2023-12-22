@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
    <>
-    <div id="navbar">
+    <div id="navbar" className='absolute'>
         <div className="container">
             <h2 className="banner hover-link" onClick={()=>navigate('/')} >Kilogram</h2>
                 <div className="right-side">

@@ -1,25 +1,23 @@
 #search-page {
-  margin-top: var(--nav-ht);
-  
-  height: calc(100vh - (calc((var(--nav-ht) + var(--bottomnav-ht)))));
-  width: 100vw;
-  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
-    radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+  padding-top: var(--nav-ht);
 
-  display: none;
+  align-items: center;
+  
 
   padding: 20px 10px;
   gap: 10px;
   .search {
+    padding-top: 50px;
     input {
       font-size: var(--p-font-size);
       font-family: var(--p-font);
       padding: 0px 20px;
+      
 
       border: 3px solid var(--light-col);
 
       height: 40px;
-      width: 40%;
+      width: 100%;
 
       border-radius: 30px;
 
@@ -35,6 +33,7 @@
   #search-page {
     display: block;
     .search {
+      padding-top: 0;
       text-align: center;
       input {
         margin: auto;
