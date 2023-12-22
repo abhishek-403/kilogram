@@ -1,17 +1,15 @@
 .profile {
-  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
-    radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
+ 
 
-  margin-top: var(--nav-ht);
-  min-height: calc(100vh - var(--nav-ht));
-
+  height: 100vh;
+  overflow: scroll;
   .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 55px;
 
     .top-area {
-      max-height: 270px;
       overflow: hidden;
 
       margin: 10px 0px;
@@ -19,24 +17,24 @@
       display: flex;
       justify-content: space-between;
 
-      border-bottom: 1px solid rgba(0, 0, 0, 0.453);
+      border-bottom: 1px solid var(--border-color);
 
-      // border-bottom: 1px solid black;
 
       .dp {
         flex: 1.5;
 
         .Avatar {
           display: flex;
-          width: auto;
-
+          
           align-items: center;
           justify-content: center;
-          height: auto;
+          width: 100%;
+          height: 100%;
+
           img {
             border-radius: 50%;
-            height: 220px;
-            width: 220px;
+            height: 150px;
+            width: 150px;
             // margin: auto;
           }
         }
@@ -46,8 +44,9 @@
         width: 600px;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
         padding: 0px 10px;
+        color: white;
 
         .top {
           display: flex;
@@ -57,7 +56,7 @@
           margin: 10px 0px;
 
           #user-name {
-            font-size: 30px;
+            font-size: 18px;
             font-weight: 400;
             font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
               "Lucida Sans", Arial, sans-serif;
@@ -78,11 +77,11 @@
         }
 
         .center {
-          margin: 10px 0px;
-          font-size: 20px;
+          font-size: 15px;
           text-align: center;
           display: flex;
-          justify-content: space-between;
+          justify-content: left;
+          gap: 25px;
 
           .count {
             font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

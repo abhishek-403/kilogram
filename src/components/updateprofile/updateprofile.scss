@@ -1,9 +1,9 @@
 .update-profile {
-  margin-top: var(--nav-ht);
   height: 100%;
   padding: 5px 0px;
-
+  
   .container {
+    padding-top:60px ;
     height: 100%;
 
     display: flex;
@@ -14,7 +14,7 @@
       flex: 1.5;
 
       align-items: center;
-      justify-content: center;
+      margin-top: 10px;
 
       flex-direction: column;
 
@@ -36,7 +36,8 @@
 
       .update-dp {
         font-size: 18px;
-        background-color: #22bdff;
+        color: white;
+        background-color:#1A1A1A;
       }
 
       #user-img {
@@ -50,11 +51,12 @@
       flex: 3;
 
       padding: 0px 10px;
+     
 
       .btn-delete {
         margin-left: auto;
 
-        background-color: rgb(246, 58, 58);
+        background-color: #f81e58;
         // margin: 0px auto;
         margin-top: auto;
         width: fit-content;
@@ -73,26 +75,35 @@
         height: 100%;
 
         label {
-          margin: 10px 0px;
+       display: block;
+          color: white;
         }
 
         input {
-          height: 40px;
-          width: 100%;
+          
+          border-radius: 10px;
+          height: 45px;
           margin: 8px 0px;
           padding: 0px 15px;
+          width: 100%;
           font-size: 18px;
-          font-family: Georgia, "Times New Roman", Times, serif;
+          font-family: var(--h1-font);
+          background-color: #1A1A1A;
+          color: white;
         }
         .buttons-grp{
           gap: 10px;
           .btn-submit,
           .btn-logout {
-            background-color: rgb(202, 58, 246);
-  
+            background-color:#1e80f8;
+            
             width: fit-content;
             color: white;
             border: 1px solid black;
+          }
+          .btn-logout{
+            
+            background-color:#f81e58;
           }
   
           .btn-submit:active {

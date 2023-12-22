@@ -10,6 +10,7 @@ module.exports = {
         allh: ["Merriweather", "serif"],
         p: ["Domine", "sans-serif"],
         span: ["Carter One", "cursive"],
+        name: ["Lucida Sans", "Lucida Sans Regular", "Lucida Grande"],
       },
     },
   },

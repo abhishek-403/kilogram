@@ -55,6 +55,8 @@ html{
   --smaller-font-size: 0.8rem;
 
   --btn-font-size: 1rem;
+  
+  transition: all 0.2s ease-in;
 }
 .container{
     padding: 0px 10px;
