@@ -28,7 +28,7 @@ function Search() {
 
 
             </div>
-            <div className="data">
+            <div className="data w-[30%]">
                 {
                     search === "" ? null :
                         data?.map((item, i) => {

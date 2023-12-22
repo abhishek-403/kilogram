@@ -6,18 +6,20 @@
 
   padding: 20px 10px;
   gap: 10px;
+  width: 100%;
   .search {
+    width: 30%;
     padding-top: 50px;
     input {
       font-size: var(--p-font-size);
       font-family: var(--p-font);
       padding: 0px 20px;
       
+      width: 100%;
 
       border: 3px solid var(--light-col);
 
       height: 40px;
-      width: 100%;
 
       border-radius: 30px;
 
@@ -35,6 +37,7 @@
     .search {
       padding-top: 0;
       text-align: center;
+      
       input {
         margin: auto;
         width: 90%;
