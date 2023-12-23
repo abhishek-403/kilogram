@@ -46,6 +46,7 @@ function Login() {
       
         const decode = jwtDecode(e.credential)
        
+       
         const response = await axiosClient.post("/auth/googlesignup", {
             email: decode.email,
             name: decode.name,
@@ -57,6 +58,7 @@ function Login() {
     
         
     } catch (e) {
+      console.log(e);
         
     }
   }

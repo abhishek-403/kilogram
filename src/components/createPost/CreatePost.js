@@ -44,7 +44,7 @@ function CreatePost() {
     <div className="create-post">
       <div className="container">
         <div className="top-side hover-link">
-          <div className="">
+          <div className="h-[45px] w-[45px]">
             <Avatar src={user?.avatar?.url} />
           </div>
 
