@@ -56,15 +56,21 @@ function Post({ post }) {
             <p className="username">{post?.owner?.username}</p>
           </div>
         </div>
-        <FaTrashAlt
-          className="cursor-pointer"
-          color=" #E74C3C"
-          size={20}
-          onClick={handleDelete}
-        />
+        {post?.isMyPost && (
+          <FaTrashAlt
+            className="cursor-pointer"
+            color=" #E74C3C"
+            size={20}
+            onClick={handleDelete}
+          />
+        )}
       </div>
       <div className="content">
-        <img className="border-t border-[#4d4b4b]" src={post?.image?.url} alt="" />
+        <img
+          className="border-t border-[#4d4b4b]"
+          src={post?.image?.url}
+          alt=""
+        />
       </div>
       <div className="footer">
         <div className="likes">
