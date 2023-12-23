@@ -41,6 +41,7 @@ function Login() {
     }
   }
 
+ 
 
   async function handleGoogleSucceed(e) {
     try {
@@ -102,7 +103,7 @@ function Login() {
 
         <div className=" flex justify-center">
           <GoogleOAuthProvider
-            clientId="697749644753-hbp7v33hsjr628mjur9ephb1j3kenrjc.apps.googleusercontent.com"
+            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
        
             scope="profile email"
           >
