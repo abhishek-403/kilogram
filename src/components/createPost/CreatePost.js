@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { axiosClient } from "../../utils/axiosClient";
 import { BsFillImageFill } from "react-icons/bs";
 import Avatar from "../avatar/Avatar";
+import { MdClear } from "react-icons/md";
+
 
 function CreatePost() {
   const user = useSelector((state) => state.postReducer.userProfile);
@@ -56,6 +58,7 @@ function CreatePost() {
           />
         </div>
 
+          {img && <MdClear onClick={()=>setImg("")} color="white" size={25}/>}
         <div className="img-div">
           {img && <img src={img} alt="" />}
           <input

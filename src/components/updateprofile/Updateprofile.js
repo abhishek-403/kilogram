@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Avatar from "../avatar/Avatar";
 import "./updateprofile.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { updateProfile } from "../../redux/slices/appConfigSlice";
+import { showToast, updateProfile } from "../../redux/slices/appConfigSlice";
 
 import { axiosClient } from "../../utils/axiosClient";
 import { useNavigate } from "react-router-dom";
 import { KEY_ACCESS_TOKEN, removeItem } from "../../localStorageManager";
+import { googleLogout } from "@react-oauth/google";
+import { TOAST_FAILURE } from "../../App";
 
 function Updateprofile() {
   const myProfile = useSelector((state) => state.appConfigReducer.myProfile);
@@ -40,6 +42,15 @@ function Updateprofile() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if(userName==null || userName.trim()===''){
+      dispatch(showToast({
+        type: TOAST_FAILURE,
+        message: {message:"Username is required"}
+      }))
+      return;
+
+    }
+
     dispatch(
       updateProfile({
         name,
@@ -54,12 +65,16 @@ function Updateprofile() {
 
   async function handleDelete() {
     try {
-      const confirm = prompt("Enter your name");
+      const val=  window.confirm("Are you sure you want to delete your account. You won't be able to recover it in future.");
+
+      if(!val){
+        return
+      }
+      const confirm = prompt("Enter your name to delete your :");
       if (confirm === myProfile?.name) {
         await axiosClient.delete("/user/deleteprofile");
         removeItem(KEY_ACCESS_TOKEN);
 
-        // console.log(response);
         navigate("/login");
       }
     } catch (e) {
@@ -68,6 +83,13 @@ function Updateprofile() {
   }
   async function handlelogout() {
     try {
+
+      const val=  window.confirm("Are you sure you want to log out");
+
+      if(!val){
+        return
+      }
+      googleLogout();
       await axiosClient.post("/auth/logout");
 
       removeItem(KEY_ACCESS_TOKEN);

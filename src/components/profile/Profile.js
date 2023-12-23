@@ -95,7 +95,7 @@ function Profile() {
         <div className="bottom-area">
           <div className="post-div">
             {userProfile?.posts?.map((item, i) => {
-              // console.log(item);
+     
               return (
                 <div key={i} className="each-post">
                   <Post key={i} post={item} />

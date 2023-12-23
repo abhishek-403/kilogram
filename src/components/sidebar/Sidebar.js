@@ -24,7 +24,12 @@ function Sidebar() {
       route: "/createpost",
     },
     {
-      icon: <IoHomeOutline />,
+      icon: (
+        <img
+          className="w-[35px] h-[35px]  rounded-full"
+          src={myProfile?.avatar?.url}
+        />
+      ),
       title: "Profile",
       route: `/profile/${myProfile?._id}`,
     },
@@ -53,10 +58,10 @@ function Tabs({ icon, title, route }) {
   return (
     <div
       onClick={() => navigate(`${route}`)}
-      className="cursor-pointer flex-row pl-3 pr-28 py-2 flex gap-5 hover:bg-[#1A1A1A] rounded-md align-middle"
+      className="cursor-pointer  flex-row pl-3 pr-28 py-2 flex gap-5 hover:bg-[#1A1A1A]  rounded-md item-center "
     >
-      <div className="text-2xl">{icon}</div>
-      <p className="text-xl font-allh font-bold ">{title}</p>
+      <div className="text-2xl center">{icon}</div>
+      <p className="text-xl flex  center font-allh font-bold ">{title}</p>
     </div>
   );
 }

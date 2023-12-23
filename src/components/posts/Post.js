@@ -9,6 +9,9 @@ import { likePost } from "../../redux/slices/postSlice";
 import { useNavigate } from "react-router-dom";
 import { showToast } from "../../redux/slices/appConfigSlice";
 import { TOAST_SUCCESS } from "../../App";
+import { FaTrashAlt } from "react-icons/fa";
+import { axiosClient } from "../../utils/axiosClient";
+import { getFeedData } from "../../redux/slices/feedSlice";
 
 function Post({ post }) {
   const dispatch = useDispatch();
@@ -29,39 +32,65 @@ function Post({ post }) {
     );
   }
 
+  async function handleDelete() {
+    try {
+      const val = window.confirm("Are you sure you want to delete");
+      if (!val) return;
+
+      await axiosClient.post("/post/deletePost", { postId: post._id });
+      dispatch(getFeedData());
+    } catch (e) {}
+  }
   return (
     <div className="post">
-      <div
-        className="heading hover-link"
-        onClick={() => navigate(`/profile/${post.owner._id}`)}
-      >
-        <div>
-          <Avatar src={post.owner?.avatar?.url} />
+      <div className="flex justify-between items-center px-[5px]">
+        <div
+          onClick={() => navigate(`/profile/${post.owner._id}`)}
+          className="heading hover-link"
+        >
+          <div>
+            <Avatar src={post.owner?.avatar?.url} />
+          </div>
+          <div className="userInfo">
+            <p className="name">{post?.owner?.name}</p>
+            <p className="username">{post?.owner?.username}</p>
+          </div>
         </div>
-        <div className="userInfo">
-          <p className="name">{post?.owner?.name}</p>
-          <p className="username">{post?.owner?.username}</p>
-        </div>
+        <FaTrashAlt
+          className="cursor-pointer"
+          color=" #E74C3C"
+          size={20}
+          onClick={handleDelete}
+        />
       </div>
       <div className="content">
-        <img src={post?.image?.url} alt="" />
+        <img className="border-t border-[#4d4b4b]" src={post?.image?.url} alt="" />
       </div>
       <div className="footer">
         <div className="likes">
           <div onClick={handleLike} className="like-btn">
             {!post.isLiked ? (
-              <AiOutlineHeart className="hover-link" style={{color:"white"}} />
+              <AiOutlineHeart
+                className="hover-link"
+                style={{ color: "white" }}
+              />
             ) : (
               <AiFillHeart className="hover-link" style={{ color: "red" }} />
             )}
           </div>
-        
-          <FaRegComment style={{color:"white",fontSize:26}} className="hover-link" />
-          <BsFillBookmarkFill style={{color:"white"}} className="hover-link" />
+
+          <FaRegComment
+            style={{ color: "white", fontSize: 26 }}
+            className="hover-link"
+          />
+          <BsFillBookmarkFill
+            style={{ color: "white" }}
+            className="hover-link"
+          />
         </div>
 
         <div className="like-count">
-          <p style={{color:"white"}}>{post?.likesCount} likes</p>
+          <p style={{ color: "white" }}>{post?.likesCount} likes</p>
         </div>
         <div className="caption">
           <span>{post?.owner?.username}</span>
@@ -70,7 +99,7 @@ function Post({ post }) {
         </div>
         <h4>{post?.timeAgo}</h4>
       </div>
-        {/* <div className="add-comment">
+      {/* <div className="add-comment">
           <input
             placeholder="Add comment.."
             className="comment-input"
