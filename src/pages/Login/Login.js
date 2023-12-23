@@ -44,14 +44,14 @@ function Login() {
 
             <div className="content flexcol">
                 <div className="top">
-                    <h2>Login</h2>
+                    <h2 className='text-white text-3xl sm:text-4xl font-bold '>Login</h2>
 
                 </div>
 
                 <form onKeyUp={e => e.key === "Enter" ? handleSubmit() : null} className="mid flexcol">
                     <div id="email">
 
-                        <input autoFocus onChange={(e) => setEmail(e.target.value)} autoComplete='off' placeholder='E-mail' type="text" id='input-email' />
+                        <input autoFocus onChange={(e) => setEmail(e.target.value)} autoComplete='off' placeholder='E-mail' type="email" id='input-email' />
                     </div>
 
                     <div id="password">

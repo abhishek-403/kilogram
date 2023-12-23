@@ -28,3 +28,30 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .profile-card {
+width: 100%;
+    .name-dp {
+      width: 100%;
+      .Avatar {
+        img {
+          border-radius: 50px;
+        }
+      }
+    }
+    .data-block {
+      gap: 5px;
+      #name {
+        font-family: var(--h1-font);
+        font-size: 14px;
+        color: white;
+      }
+      #username {
+        font-family: var(--p-font);
+        font-size: 12px;
+        color: white;
+      }
+    }
+  }
+}

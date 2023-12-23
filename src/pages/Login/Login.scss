@@ -1,21 +1,22 @@
 #login {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(110deg, #a50af311 40%, rgba(0, 0, 0, 0) 30%),
-  radial-gradient(farthest-corner at 0% 0%, #7a00cc16 70%, #bf3fff21 70%);
-  background-size: cover;
-
-  .content {
+ background-color: rgb(0, 0, 0);
+ 
+ .content {
     width: 350px;
 
-    background-color: var(--lighter-col);
+    background-color: #202020;
     border-radius: 20px;
-    box-shadow: 1px 1px 18px 0px rgba(0, 0, 0, 0.214);
+    box-shadow: 3px 3px 20px 01px rgba(184, 175, 175, 0.201);
    gap: 20px;
+   
 
     padding: 10px 20px;
     margin: 10px 20px;
+  
     .top {
+      color: white;
       text-align: center;
     }
     .mid {
@@ -34,8 +35,11 @@
         transition:all .2s ease-out;
         outline: 0;
 
+        color: white;
+        background-color: #1a1a1a;
+        border-radius: 10px;
         &:focus {
-          border-color:rgb(127, 127, 255);
+          border-bottom-color:rgb(255, 255, 255);
         }
       }
       div {
@@ -48,7 +52,7 @@
         font-family: var(--p-font);
         font-size: var(--p-font-size);
         border-radius: 30px;
-        background-color: var(--sec-col);
+        background-color: #1e80f8;
         color: white;
         border: none;
 
@@ -57,8 +61,9 @@
     .bottom {
       font-family: var(--allh-font);
       font-size: var(--smaller-font-size);
+      color: white;
       a {
-        color: blue;
+        color: rgb(0, 183, 255);
         text-decoration: underline;
       }
     }

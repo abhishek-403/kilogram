@@ -12,7 +12,8 @@ function Loading() {
                     zIndex: '100',
                     height: "100vh",
                     width: "100vw",
-                    backgroundColor: "hsl(0deg 0% 0% / 70%)"
+                    background: "hsl(0deg 0% 0% / 80%)",
+                 
 
                 }
             }

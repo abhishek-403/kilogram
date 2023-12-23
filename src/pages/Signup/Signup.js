@@ -48,7 +48,7 @@ function Signup() {
 
             <div className="content flexcol">
                 <div className="top">
-                    <h2>Sign up</h2>
+                    <h2 className='text-white text-3xl sm:text-4xl font-bold'>Sign up</h2>
 
                 </div>
 
@@ -60,7 +60,7 @@ function Signup() {
                     </div>
 
                     <div id="email">
-                        <input ref={email} autoComplete='off' placeholder='E-mail' type="text" id='input-email' />
+                        <input ref={email} autoComplete='off' placeholder='E-mail' type="email" id='input-email' />
                     </div>
 
                     <div id="password">

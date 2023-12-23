@@ -56,10 +56,13 @@
 
 @media screen and (max-width: 780px) {
   .feed {
-    
-  height: calc(100vh - (calc( (var(--nav-ht) + var(--bottomnav-ht)))));
     .container {
+      
       padding: 0px;
+      .left-part{
+        margin-bottom: var(--bottomnav-ht); 
+
+      }
       .right-part {
         display: none;
       }
@@ -71,6 +74,7 @@
   .feed {
     .container {
       .left-part {
+        margin-bottom: var(--bottomnav-ht);
         gap: 0px;
         .each-post {
           border-bottom: none;
