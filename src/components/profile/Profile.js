@@ -55,12 +55,12 @@ function Profile() {
           <div className="personal-info">
             <div className="top">
               <div className="flex flex-col gap-1">
-                <div id="name" className="text-2xl font-bold font-name">{userProfile?.name}</div>
+                <div id="name" className="textsm sm:text-2xl font-bold font-name">{userProfile?.name}</div>
                 <div id="user-name">{userProfile?.username}</div>
               </div>
               <div className="buttons">
                 {!isMe && (
-                  <div className="btn btn-follow" onClick={handleFollow}>
+                  <div className="btn btn-follow " onClick={handleFollow}>
                     {isFollowing ? "Unfollow" : "Follow"}
                   </div>
                 )}

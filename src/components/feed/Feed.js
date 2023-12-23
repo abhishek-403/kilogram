@@ -33,7 +33,7 @@ function Feed() {
           </div>
         } */}
 
-        <div className="right-part">
+        <div className="right-part ">
           {feedData.followings?.length > 0 && (
             <div className="followings">
               <h2 className="font-h1 text-lg" id="followings-h2">Followings</h2>

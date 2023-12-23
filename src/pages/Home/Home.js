@@ -13,16 +13,14 @@ function Home() {
     dispatch(getMyInfo());
   }, [dispatch]);
 
-  const screenWidth = window.innerWidth;
-  console.log(screenWidth);
 
   return (
     <div className="bg-black h-[100vh]">
       <Navbar />
       <div>
-        {screenWidth>768&&<div className=" absolute">
+        <div className="hidden lg:block absolute">
           <Sidebar />
-        </div>}
+        </div>
         <Outlet />
       </div>
       <BottomNav />
