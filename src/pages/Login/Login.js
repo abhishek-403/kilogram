@@ -6,7 +6,7 @@ import { KEY_ACCESS_TOKEN, setItem } from "../../localStorageManager";
 import { useDispatch } from "react-redux";
 import { setSpinner, showToast } from "../../redux/slices/appConfigSlice";
 import {jwtDecode} from 'jwt-decode'
-import { GoogleLogin, GoogleOAuthProvider, googleLogout } from "@react-oauth/google";
+import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { TOAST_FAILURE } from "../../App";
 
 function Login() {
@@ -40,8 +40,6 @@ function Login() {
       dispatch(setSpinner(false));
     }
   }
-
- 
 
   async function handleGoogleSucceed(e) {
     try {

@@ -31,7 +31,7 @@ function Profile() {
         -1
         ? false
         : true
-    );
+    );  
 
     setIsMe(myProfile?._id === params.userId);
   }, [dispatch, params.userId]);

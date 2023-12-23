@@ -9,8 +9,7 @@ import { jwtDecode } from "jwt-decode";
 import {
   GoogleLogin,
   GoogleOAuthProvider,
-  googleLogout,
-} from "@react-oauth/google";
+  } from "@react-oauth/google";
 import { TOAST_FAILURE } from "../../App";
 
 function Signup() {

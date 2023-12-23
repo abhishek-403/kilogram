@@ -1,5 +1,4 @@
 import React from "react";
-import { IoHomeOutline } from "react-icons/io5";
 import { AiFillHome } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosAddCircleOutline } from "react-icons/io";
