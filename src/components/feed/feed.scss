@@ -53,7 +53,18 @@
     }
   }
 }
-
+@media (max-width: 1380px) {
+   
+      .feed {
+    .container {
+      
+      
+      .right-part {
+        display: none;
+      }
+    }
+  }
+}
 @media screen and (max-width: 780px) {
   .feed {
     .container {

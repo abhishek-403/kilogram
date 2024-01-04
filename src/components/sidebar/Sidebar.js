@@ -53,7 +53,7 @@ function Tabs({ icon, title, route }) {
   return (
     <div
       onClick={() => navigate(`${route}`)}
-      className="cursor-pointer  flex-row pl-3 pr-28 py-2 flex gap-5 hover:bg-[#1A1A1A]  rounded-md item-center "
+      className="cursor-pointer  flex-row pl-3 pr-20 py-2 flex gap-5 hover:bg-[#1A1A1A]  rounded-md item-center "
     >
       <div className="text-2xl center">{icon}</div>
       <p className="text-xl flex  center font-allh font-bold ">{title}</p>
