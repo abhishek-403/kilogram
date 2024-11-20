@@ -2,8 +2,8 @@ import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Avatar from "../avatar/Avatar";
 function Sidebar() {
   const myProfile = useSelector((state) => state.appConfigReducer.myProfile);

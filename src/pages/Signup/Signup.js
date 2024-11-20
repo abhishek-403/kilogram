@@ -11,6 +11,7 @@ import {
   GoogleOAuthProvider,
   } from "@react-oauth/google";
 import { TOAST_FAILURE } from "../../App";
+import Footer from "../../components/footer";
 
 function Signup() {
   const email = useRef("");
@@ -142,6 +143,7 @@ function Signup() {
           </span>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

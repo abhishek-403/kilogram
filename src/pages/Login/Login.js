@@ -8,6 +8,7 @@ import { setSpinner, showToast } from "../../redux/slices/appConfigSlice";
 import {jwtDecode} from 'jwt-decode'
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import { TOAST_FAILURE } from "../../App";
+import Footer from "../../components/footer";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -123,6 +124,7 @@ function Login() {
           </span>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
